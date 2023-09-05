@@ -1,22 +1,52 @@
 // Const to take player's and computer's selection
-//const playerSelection = prompt('Select Rock, Paper or Scissors.').toLowerCase();
-const playerSelection = 'scissors';
+//let playerSelection = prompt('Select Rock, Paper or Scissors.').toLowerCase();
 const choices = ['rock', 'paper', 'scissors'];
-const computerSelection = choices[Math.floor(Math.random() * 3)];
+let computerSelection = choices[Math.floor(Math.random() * 3)];
+
+// Track score
+let playerScore = 0;
+let computerScore = 0;
+const lose = "You Lose!";
+const win = "You Win!";
+const tie = "It's a tie";
 
 
 //Play a single round
 
 function playRound(playerSelection, computerSelection) {
     if(playerSelection == computerSelection) {
-        return `It's a tie!`;
+        return tie;
     } else if((playerSelection == 'rock' && computerSelection == 'scissors') ||
     (playerSelection == 'paper' && computerSelection == 'rock') ||
-    (playerSelection == 'scissors' && computerSelection == 'paper')) {
-        return `You win! ${playerSelection} beats ${computerSelection}!`;
+    (playerSelection == 'scissors' && computerSelection == 'paper')) {    
+        return win;
     } else {
-        return `You lose! ${computerSelection} beats ${playerSelection}!`
+        return lose;
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+// Play game
+
+function game(){
+    for(let i = 0; i < 5; i++) {
+        playerSelection = prompt('Select Rock, Paper or Scissors.').toLowerCase();
+        computerSelection = choices[Math.floor(Math.random() * 3)];
+
+        let result = playRound(playerSelection, computerSelection);
+
+        if (result == win) {
+            playerScore++;
+            console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+            console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
+        } else if (result == lose) {
+            computerScore++;
+            console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+            console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
+        } else {
+            console.log(tie);
+        }
+    }
+
+}
+
+game();
