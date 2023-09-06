@@ -28,12 +28,12 @@ function playRound(playerSelection, computerSelection) {
 // Play game
 
 function game(){
-    for(let i = 0; i < 5; i++) {
+    for(let i = 1; i < 6; i++) {
         playerSelection = prompt('Select Rock, Paper or Scissors.').toLowerCase();
         computerSelection = choices[Math.floor(Math.random() * 3)];
 
         let result = playRound(playerSelection, computerSelection);
-
+        console.log(`Round: ${i}`);
         if (result == win) {
             playerScore++;
             console.log(`You win! ${playerSelection} beats ${computerSelection}`);
@@ -43,7 +43,10 @@ function game(){
             console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
             console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
         } else {
+            playerScore++;
+            computerScore++;
             console.log(tie);
+            console.log(`Player: ${playerScore}, Computer: ${computerScore}`);
         }
     }
 
