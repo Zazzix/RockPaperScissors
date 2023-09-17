@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,28 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <h1>Rock, Paper, Scissors.</h1>
     <div class="interface">
         <div class="score_panel">
-            <p>Player: 0</p>
-            <p class="status">Win</p>
-            <p>Computer: 0</p>
+            <p class="player_scroe">Player: 0</p>
+            <p class="status"></p>
+            <p class="computer_score">Computer: 0</p>
         </div>
         <div class="chose-panel">
-        <h2>Choose Rock, Paper or Scissors!</h2>
-        <div class="buttons">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <div class="buttons">
+                <button class="rock">Rock</button>
+                <button class="paper">Paper</button>
+                <button class="scissors">Scissors</button>
+            </div>
+            <p>Choose Rock, Paper or Scissors!</p>
         </div>
     </div>
-    </div>
+    <button class="restart_button" id="restart">Restart</button>
     <script src="./script.js"></script>
 </body>
+
 </html>
